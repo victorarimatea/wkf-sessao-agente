@@ -5,6 +5,35 @@
 
 ---
 
+## v1.1 — 2026-06-06
+
+**Tipo de alteração:** Melhoria
+**Autorizado por:** victorarimatea
+**Status do workflow:** ativo
+**Exposição de motivos:** Ajuste do critério de convergência da auditoria W05
+na Etapa 7, baseado em aprendizado empírico da sessão de 2026-06-06. O critério
+anterior ("dois acionamentos consecutivos com zero divergências") mostrou-se
+inalcançável na prática: cada auditoria detalhada — especialmente com modelos
+de maior capacidade (Opus 4.8) — encontrava novas divergências de polimento
+que as anteriores não viam. A perfeição estrutural absoluta revelou-se uma
+assíntota, não um destino.
+
+**Novo critério:** encerramento com ZERO divergências SEV1 e SEV2 em um único
+acionamento. SEV3 e SEV4 são aceitas como estado tolerado e levadas via Handoff
+para correção planejada. Teto de três iterações mantido como salvaguarda.
+
+**Fundamento:** o que importa para a saúde do ecossistema é integridade
+operacional (zero problemas que afetam dados ou execução), não perfeição
+estrutural (polimento, indexação, metadados). O novo critério evita ciclos
+de correção infinitos, onde cada correção introduz risco de novos erros.
+
+### Alterações realizadas
+- Etapa 7 do `WORKFLOW.md`: critério de convergência redefinido
+- Adicionada seção "Critério de qualidade — integridade operacional"
+- Adicionado fundamento empírico da sessão de 2026-06-06
+
+---
+
 ## v1.0 — 2026-06-06
 
 **Tipo de alteração:** Criação
