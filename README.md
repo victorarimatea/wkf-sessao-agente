@@ -2,7 +2,7 @@
 
 **ID:** W06
 **Tipo:** Workflow
-**Versão:** v1.0 — 2026-06-06
+**Versão:** v1.1 — 2026-06-06
 **Status:** ativo
 **Mantenedor:** victorarimatea
 **Visibilidade:** Público
