@@ -1,6 +1,6 @@
 # WORKFLOW.md — Protocolo de Sessão Assistida por Agente
 
-**Versão:** v1.0 — 2026-06-06
+**Versão:** v1.1 — 2026-06-06
 **Status:** ativo
 **Responsável:** Victor Leonardo Arimatea Queiroz — Diretor de Transformação Digital
 **Repositório:** wkf-sessao-agente (W06)
@@ -304,22 +304,42 @@ registrar explicitamente e prosseguir.
    - Repetir os passos 1–5
 
 7. Continuar iterando até uma das condições de convergência:
-   - **Condição A (preferencial):** dois acionamentos W05 consecutivos
-     retornam zero divergências
+   - **Condição A (encerramento):** um acionamento W05 retorna ZERO
+     divergências SEV1 e SEV2. Divergências SEV3 e SEV4 remanescentes são
+     aceitas como estado tolerado, registradas e levadas via Handoff para
+     correção planejada em sessão futura.
    - **Condição B (limite):** três iterações completadas — registrar
-     divergências residuais e aceitar como estado tolerado com decisão
-     explícita do mantenedor
+     divergências residuais (de qualquer severidade) e aceitar como estado
+     tolerado com decisão explícita do mantenedor.
 
-8. Registrar o número de iterações realizadas
+8. Registrar o número de iterações realizadas e as divergências SEV3/SEV4
+   toleradas (se houver) para Handoff.
 
-**Nota sobre variabilidade:** é esperado que dois acionamentos consecutivos
-do W05 possam retornar resultados diferentes. Isso não é falha — é
-característica do ambiente (LLM com atenção distribuída, complexidade do
-ecossistema). O critério de dois consecutivos zerados é a resposta
-operacional a essa variabilidade.
+**Critério de qualidade — integridade operacional, não perfeição estrutural:**
+O critério de encerramento é a ausência de divergências SEV1 (crítico) e SEV2
+(alto) — ou seja, zero problemas que afetam dados operacionais ou integridade
+do ecossistema. Divergências SEV3 (estrutura interna sem impacto imediato) e
+SEV4 (polimento, indexação, metadados) NÃO bloqueiam o encerramento.
+
+**Fundamento empírico (sessão de 2026-06-06):** observou-se que cada auditoria
+suficientemente detalhada — especialmente com modelos de maior capacidade —
+encontra novas divergências de polimento que as anteriores não detectaram.
+A perfeição estrutural absoluta é uma assíntota, não um destino alcançável.
+Exigir "zero divergências absoluto" levaria a ciclos de correção potencialmente
+infinitos, onde cada correção introduz risco de novos erros. O critério de
+integridade operacional (zero SEV1/SEV2) captura o que realmente importa para
+a saúde do ecossistema, enquanto SEV3/SEV4 são tratadas de forma planejada
+via Handoff.
+
+**Nota sobre variabilidade:** é esperado que acionamentos consecutivos do W05
+possam retornar resultados diferentes. Isso não é falha — é característica do
+ambiente (LLM com atenção distribuída, complexidade do ecossistema, capacidade
+do modelo acionado). Recomenda-se acionar o W05 com o modelo de maior
+performance disponível (ver Etapa 7, passo 2).
 
 **Critério de conclusão:** condição A ou B atingida, número de iterações
-registrado, relatório W05 final em mãos.
+registrado, divergências SEV3/SEV4 toleradas anotadas para Handoff, relatório
+W05 final em mãos.
 
 ---
 
