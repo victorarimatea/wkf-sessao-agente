@@ -1,3 +1,23 @@
+## v1.1 — 2026-06-10 (correção interna)
+
+**Tipo de alteração:** Correção (OP-W + OP-E)
+**Autorizado por:** victorarimatea
+**Status do workflow:** ativo
+**Exposição de motivos:** Correção de divergências SEV2-04 e SEV4-03
+identificadas pelo W05 em auditoria de 2026-06-09.
+
+**O que mudou:**
+- Seção 1 (tabela de Identificação): campo `Versão` corrigido de `v1.0`
+  para `v1.1` — divergência interna no documento de especificação (SEV2-04)
+- Seção de Encerramento, linhas operacionais: termo "perguntas ordenadoras"
+  substituído por "perguntas orientadoras" (SEV4-03 / I2 do ROADMAP)
+  — apenas texto operacional; registros históricos no backlog preservados
+
+**Nota:** A versão do workflow permanece v1.1 — estas correções resolvem
+inconsistências internas sem introduzir conteúdo novo.
+
+---
+
 # backlog-versoes.md — wkf-sessao-agente (W06)
 
 **Repositório:** wkf-sessao-agente
