@@ -13,7 +13,7 @@
 |---|---|
 | Nome do processo | Protocolo de Sessão Assistida por Agente |
 | ID | W06 |
-| Versão | v1.0 |
+| Versão | v1.1 |
 | Status | ativo |
 | Data de criação | 2026-06-06 |
 | Responsável | DTD/SETIS/SES-DF |
@@ -243,11 +243,11 @@ EXECUCOES.md atualizado, ROADMAP atualizado.
 **Quando:** Após o W03, antes do W05
 
 **Instrução ao agente:**
-Revisar a sessão respondendo às seguintes perguntas ordenadoras.
+Revisar a sessão respondendo às seguintes perguntas orientadoras.
 Cada resposta positiva gera uma proposta de registro submetida à aprovação
 do mantenedor antes de qualquer escrita.
 
-**Perguntas ordenadoras:**
+**Perguntas orientadoras:**
 
 *Para a staging Seção C (ideias brutas):*
 - Surgiu um conceito, instrumento ou estrutura que ainda não existe no
