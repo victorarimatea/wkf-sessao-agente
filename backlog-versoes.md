@@ -1,3 +1,40 @@
+## v1.2 — 2026-06-12
+
+**Tipo de alteração:** Melhoria (OP-W)
+**Autorizado por:** Victor Leonardo Arimatea Queiroz
+**Status do workflow:** ativo
+**Execuções afetadas:** nenhuma
+**Skills afetadas:** nenhuma
+
+**Exposição de motivos:** A Etapa 2 (abertura) ainda dependia de o mantenedor
+colar manualmente o relatório de handoff a cada abertura de sessão — fonte de
+atrito diário. Com o handoff agora versionado dentro do relatório de sessão
+(W03 v1.3, Bloco III), a abertura pode localizá-lo e lê-lo sozinha via API.
+Atende à meta 2 do bloco "Formalização do ciclo de sessão" do ROADMAP.
+
+Decisão de design do mantenedor (2026-06-12): o processo manual de colagem
+está aposentado. Se a leitura automática do handoff falhar, o caminho correto
+não é reverter à colagem manual, mas acionar uma auditoria W05 nova do zero —
+o ecossistema real é fonte de verdade mais confiável que um handoff corrompido,
+e gerar uma auditoria nova custa menos que reintroduzir o atrito diário.
+
+### Alterações realizadas
+- `WORKFLOW.md` v1.1 → v1.2:
+  - Etapa 2 reescrita ("Localização e absorção do Handoff — leitura automática"):
+    agente lista `hub-memoria/documentos`, identifica o `SESSAO-*` mais recente,
+    lê a seção final (Bloco de Handoff) via API. Responsável passa de
+    Humano+Agente para Agente
+  - Adicionada **regra de fallback**: falha na extração → recomendar auditoria
+    W05 nova do zero, nunca solicitar cola manual
+  - Tratamento de primeira sessão (sem handoff anterior) explicitado
+  - Seção 1 (tabela de Identificação): campo Versão v1.1 → v1.2
+  - Pacote 1 (Seção 7): ETAPA 2 do bloco de mensagem atualizada — sem o
+    marcador "[COLAR AQUI O RELATÓRIO W05...]", agora com instrução de
+    localização automática
+  - Seção 9 (Histórico): linhas v1.1 e v1.2 registradas
+
+---
+
 ## v1.1 — 2026-06-10 (correção interna)
 
 **Tipo de alteração:** Correção (OP-W + OP-E)
