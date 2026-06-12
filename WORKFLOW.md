@@ -416,14 +416,20 @@ GET https://api.github.com/repos/victorarimatea/skl-github-orquestracao/contents
 Decodifique o campo `content` de base64 em cada resposta.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-ETAPA 2 — HANDOFF DA SESSÃO ANTERIOR
+ETAPA 2 — HANDOFF DA SESSÃO ANTERIOR (lido automaticamente — não preciso colar)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-[COLAR AQUI O RELATÓRIO W05 DO FECHAMENTO DA SESSÃO ANTERIOR]
+Liste https://api.github.com/repos/victorarimatea/hub-memoria/contents/documentos
+Identifique o arquivo SESSAO-AAAA-MM-DD-*.md com a data mais recente no nome.
+Leia-o via API e absorva a seção final do relatório (Bloco de Handoff).
 
-Leia e absorva. Há divergências SEV1 ou SEV2 abertas?
-Se sim: sinalize antes de receber a missão.
-Se não: confirme o estado herdado e declare pronto.
+Há divergências SEV1 ou SEV2 abertas no handoff?
+- Se sim: sinalize antes de receber a missão.
+- Se não: confirme o estado herdado e declare pronto.
+
+Se a extração do handoff falhar (arquivo não encontrado, seção ausente,
+conteúdo ilegível): não peça para eu colar nada. Recomende acionar uma
+auditoria W05 nova do zero para reconstruir o estado herdado.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ETAPA 3 — MISSÃO DO DIA
@@ -500,4 +506,6 @@ Quando uma situação não coberta por este processo surgir, a decisão correta
 
 | Versão | Data | Tipo | Descrição |
 |---|---|---|---|
+| v1.2 | 2026-06-12 | Melhoria | Etapa 2 reescrita: handoff lido **automaticamente** pelo agente a partir do último relatório `SESSAO-*` no hub-memoria (Bloco III do W03), eliminando a cola manual e o atrito diário de abertura. Adicionada regra de fallback: falha na extração do handoff → acionar auditoria W05 nova do zero, nunca reverter ao processo manual. Pacote 1 atualizado. Atende à meta 2 do bloco "Formalização do ciclo de sessão" do ROADMAP |
+| v1.1 | 2026-06-06 | Melhoria | Ajuste do critério de convergência da auditoria W05 (Etapa 7): encerramento com zero SEV1/SEV2 em acionamento único; SEV3/SEV4 toleradas via Handoff; teto de três iterações como salvaguarda. Correção interna de 2026-06-10 (SEV2-04 campo Versão da Seção 1; SEV4-03 "ordenadoras"→"orientadoras") |
 | v1.0 | 2026-06-06 | Criação | Processo inaugural — nasce da maturação do processo de trabalho ao longo das sessões de construção do ecossistema DTD/SETIS; incorpora separação executor/auditor, protocolo de Handoff entre sessões, perguntas ordenadoras e princípio de staging como camada de governança universal |
