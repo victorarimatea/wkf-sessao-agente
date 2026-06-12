@@ -1,6 +1,6 @@
 # WORKFLOW.md — Protocolo de Sessão Assistida por Agente
 
-**Versão:** v1.1 — 2026-06-06
+**Versão:** v1.2 — 2026-06-12
 **Status:** ativo
 **Responsável:** Victor Leonardo Arimatea Queiroz — Diretor de Transformação Digital
 **Repositório:** wkf-sessao-agente (W06)
@@ -13,7 +13,7 @@
 |---|---|
 | Nome do processo | Protocolo de Sessão Assistida por Agente |
 | ID | W06 |
-| Versão | v1.1 |
+| Versão | v1.2 |
 | Status | ativo |
 | Data de criação | 2026-06-06 |
 | Responsável | DTD/SETIS/SES-DF |
@@ -138,27 +138,52 @@ estado do ecossistema absorvido e declarado ao mantenedor.
 
 ---
 
-### Etapa 2 — Ingestão do relatório W05 herdado (Handoff)
+### Etapa 2 — Localização e absorção do Handoff (leitura automática)
 
-**Responsável:** Humano (Victor) + Agente
+**Responsável:** Agente (Claude)
 **Quando:** Após a leitura do contexto, antes da missão
 
-**Instrução ao humano:**
-Colar o relatório W05 da sessão anterior diretamente na mensagem de abertura
-(Pacote 1). Se esta for a primeira sessão usando este processo, substituir
-pelo texto: *"Primeira sessão com protocolo W06 — W05 será executado no
-fechamento desta sessão."*
+**Mudança estrutural (v1.2):** o handoff deixou de ser um objeto solto carregado
+pelo mantenedor no bloco de notas. Ele agora vive versionado no GitHub, dentro
+do relatório de sessão (W03, Bloco III, seção final), em local conhecido. A
+abertura da sessão **localiza e lê o handoff sozinha** — o mantenedor não cola
+mais nada. Esta mudança elimina o atrito diário que o processo manual gerava.
 
 **Instrução ao agente:**
-Ler o relatório W05 colado. Responder às seguintes perguntas antes de prosseguir:
-- Há divergências SEV1 ou SEV2 abertas não corrigidas?
-- Se sim: declarar explicitamente e aguardar decisão do mantenedor antes
-  de receber a missão. Não iniciar trabalho sobre ecossistema com divergências
-  críticas abertas sem decisão explícita.
-- Se não: confirmar estado herdado e declarar pronto para receber a missão.
+Localizar e absorver o Bloco de Handoff da sessão anterior, sem depender de
+cola manual:
 
-**Critério de conclusão:** estado herdado confirmado, divergências críticas
-declaradas (se houver), mantenedor ciente do ponto de partida.
+1. Listar o conteúdo de `hub-memoria/documentos` via API GitHub:
+   ```
+   GET https://api.github.com/repos/victorarimatea/hub-memoria/contents/documentos
+   ```
+2. Identificar o arquivo `SESSAO-AAAA-MM-DD-*.md` com a **data mais recente**
+   no nome.
+3. Ler esse arquivo via API e absorver sua seção final — o **Bloco de Handoff**
+   (Bloco III da estrutura do W03).
+4. Responder, antes de prosseguir:
+   - Há divergências SEV1 ou SEV2 abertas não corrigidas no handoff?
+   - Se sim: declarar explicitamente e aguardar decisão do mantenedor antes
+     de receber a missão. Não iniciar trabalho sobre ecossistema com divergências
+     críticas abertas sem decisão explícita.
+   - Se não: confirmar o estado herdado e declarar pronto para a missão.
+
+**Regra de fallback (decisão do mantenedor, 2026-06-12):**
+Se a extração do Bloco de Handoff falhar — arquivo não encontrado, seção
+ausente, conteúdo ilegível — o agente **NÃO** solicita cola manual nem reverte
+ao processo anterior. Em vez disso, sinaliza ao mantenedor e recomenda acionar
+uma **auditoria W05 nova do zero** (chat separado, sem token) para reconstruir
+o estado herdado a partir do ecossistema real — fonte de verdade mais confiável
+que um handoff corrompido. O processo manual de colagem está aposentado: é
+preferível gerar uma auditoria nova a reintroduzir o atrito que ele causava.
+
+**Primeira sessão (sem handoff anterior):** se não houver nenhum relatório
+`SESSAO-*` no hub-memoria, declarar *"Primeira sessão sob este protocolo — W05
+será executado no fechamento desta sessão"* e prosseguir.
+
+**Critério de conclusão:** handoff localizado e lido pelo agente, estado herdado
+confirmado, divergências críticas declaradas (se houver), mantenedor ciente do
+ponto de partida.
 
 ---
 
