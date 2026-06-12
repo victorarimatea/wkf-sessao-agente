@@ -1,3 +1,19 @@
+## v1.2 — 2026-06-12 (correção pós-auditoria)
+
+**Tipo de alteração:** Correção (OP-E) — mesma versão v1.2
+**Autorizado por:** Victor Leonardo Arimatea Queiroz
+**Detectado por:** auditoria W05 independente de 2026-06-12 (SEV2-D1)
+
+**Exposição de motivos:** A auditoria W05 de fechamento identificou que o
+`README.md` deste repositório ainda declarava v1.1 — 2026-06-06, enquanto o
+WORKFLOW.md e o sumario.md já registravam v1.2. Divergência de propagação não
+capturada na operação principal v1.2 (o plano não incluiu o README).
+
+### Alterações realizadas
+- `README.md`: campo Versão v1.1 → v1.2 (alinhamento ao WORKFLOW.md e sumario)
+
+---
+
 ## v1.2 — 2026-06-12
 
 **Tipo de alteração:** Melhoria (OP-W)
