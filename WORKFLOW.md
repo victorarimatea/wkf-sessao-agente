@@ -1,6 +1,6 @@
 # WORKFLOW.md — Protocolo de Sessão Assistida por Agente
 
-**Versão:** v1.2 — 2026-06-12
+**Versão:** v1.3 — 2026-06-14
 **Status:** ativo
 **Responsável:** Victor Leonardo Arimatea Queiroz — Diretor de Transformação Digital
 **Repositório:** wkf-sessao-agente (W06)
@@ -13,7 +13,7 @@
 |---|---|
 | Nome do processo | Protocolo de Sessão Assistida por Agente |
 | ID | W06 |
-| Versão | v1.2 |
+| Versão | v1.3 |
 | Status | ativo |
 | Data de criação | 2026-06-06 |
 | Responsável | DTD/SETIS/SES-DF |
@@ -443,7 +443,8 @@ Regras operacionais:
 • Toda operação gera registros em backlogs e changelogs
 • Texto operacional divergente = corrigir. Texto histórico = preservar
 
-Token GitHub com acesso repo: [INSERIR TOKEN]
+Token de leitura ampla (abertura — alcança repositórios privados): [INSERIR TOKEN]
+(O token de edição entra apenas quando a sessão converte para escrita — Modo 1.)
 ```
 
 ---
@@ -481,7 +482,7 @@ Após o relatório: PARE.
 Não proponha correções. Não inicie operações. Não solicite token.
 Nenhuma alteração em repositório neste chat — apenas auditoria e relatório.
 
-Token GitHub com acesso repo: [INSERIR TOKEN]
+Token de leitura (o auditor nunca recebe token de edição): [INSERIR TOKEN]
 ```
 
 ---
@@ -506,6 +507,7 @@ Quando uma situação não coberta por este processo surgir, a decisão correta
 
 | Versão | Data | Tipo | Descrição |
 |---|---|---|---|
+| v1.3 | 2026-06-14 | Correção | Campos de token dos Pacotes 1 e 2 alinhados à doutrina de dois tokens: ambos passam a pedir o **token de leitura** (abertura é read-only até a conversão para escrita; auditoria nunca recebe edição); o token de edição entra só no Modo 1. Remove a ambiguidade que levava o mantenedor a colar o token de edição na abertura |
 | v1.2 | 2026-06-12 | Melhoria | Etapa 2 reescrita: handoff lido **automaticamente** pelo agente a partir do último relatório `SESSAO-*` no hub-memoria (Bloco III do W03), eliminando a cola manual e o atrito diário de abertura. Adicionada regra de fallback: falha na extração do handoff → acionar auditoria W05 nova do zero, nunca reverter ao processo manual. Pacote 1 atualizado. Atende à meta 2 do bloco "Formalização do ciclo de sessão" do ROADMAP |
 | v1.1 | 2026-06-06 | Melhoria | Ajuste do critério de convergência da auditoria W05 (Etapa 7): encerramento com zero SEV1/SEV2 em acionamento único; SEV3/SEV4 toleradas via Handoff; teto de três iterações como salvaguarda. Correção interna de 2026-06-10 (SEV2-04 campo Versão da Seção 1; SEV4-03 "ordenadoras"→"orientadoras") |
 | v1.0 | 2026-06-06 | Criação | Processo inaugural — nasce da maturação do processo de trabalho ao longo das sessões de construção do ecossistema DTD/SETIS; incorpora separação executor/auditor, protocolo de Handoff entre sessões, perguntas ordenadoras e princípio de staging como camada de governança universal |
