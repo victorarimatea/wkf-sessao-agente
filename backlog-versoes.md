@@ -1,3 +1,30 @@
+## v1.3 — 2026-06-14
+
+**Tipo de alteração:** Correção (OP-W)
+**Autorizado por:** Victor Leonardo Arimatea Queiroz
+**Status do workflow:** ativo
+**Execuções afetadas:** nenhuma
+**Skills afetadas:** nenhuma
+
+**Exposição de motivos:** Os Pacotes 1 (abertura) e 2 (fechamento/auditoria)
+da Seção 7 terminavam em "Token GitHub com acesso repo: [INSERIR TOKEN]",
+incoerente com a doutrina de dois tokens já canônica no PROTOCOLO-SESSAO.md.
+A abertura é read-only até a conversão para escrita, e o auditor nunca recebe
+token de edição — ambos os pacotes devem pedir o token de leitura. A ambiguidade
+foi exposta na largada da sessão de 2026-06-14: a ETAPA 1 pedia "token de
+leitura" mas o campo do pacote pedia "acesso repo" (token de edição).
+
+### Alterações realizadas
+- `WORKFLOW.md` v1.2 -> v1.3:
+  - Pacote 1: campo de token -> "Token de leitura ampla (abertura)"; nota de que
+    o token de edição entra só na conversão para escrita (Modo 1)
+  - Pacote 2: campo de token -> "Token de leitura (o auditor nunca recebe token
+    de edição)"
+  - Seção 9 (Histórico): linha v1.3 registrada
+  - Cabeçalho e Seção 1 (tabela): v1.2 -> v1.3
+
+---
+
 ## v1.2 — 2026-06-12 (correção pós-auditoria)
 
 **Tipo de alteração:** Correção (OP-E) — mesma versão v1.2
