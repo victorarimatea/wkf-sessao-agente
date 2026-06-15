@@ -1,6 +1,6 @@
 # WORKFLOW.md — Protocolo de Sessão Assistida por Agente
 
-**Versão:** v1.3 — 2026-06-14
+**Versão:** v1.4 — 2026-06-15
 **Status:** ativo
 **Responsável:** Victor Leonardo Arimatea Queiroz — Diretor de Transformação Digital
 **Repositório:** wkf-sessao-agente (W06)
@@ -13,7 +13,7 @@
 |---|---|
 | Nome do processo | Protocolo de Sessão Assistida por Agente |
 | ID | W06 |
-| Versão | v1.3 |
+| Versão | v1.4 |
 | Status | ativo |
 | Data de criação | 2026-06-06 |
 | Responsável | DTD/SETIS/SES-DF |
@@ -384,6 +384,18 @@ Produzir o sumário de encerramento respondendo às seguintes perguntas:
 O sumário de encerramento inclui obrigatoriamente o relatório W05 final
 formatado para ser salvo e colado na próxima abertura (Handoff).
 
+
+**Ergonomia de fechamento — entrega de blocos copiáveis (C5):**
+Ao encerrar, o agente entrega em code fence copiável (sem necessidade de seleção manual):
+
+1. **Pacote 2 — reauditoria W05:** instrução pronta para abrir o chat de auditoria
+   independente, com token de leitura, contextualizando a sessão que acabou.
+2. **Bloco 1 — abertura da próxima sessão operacional:** já contextualizado pela
+   missão provável e pela dívida prioritária do Handoff, faltando apenas o token.
+
+O bloco de leitura (Modo 3) **não** é entregue no fechamento — mora no bloco de notas
+para uso pontual. Apenas o arco de operação é entregue, fechando a corrente entre sessões.
+
 **Instrução ao humano:**
 - Salvar o relatório W05 final no bloco de notas — será colado na
   próxima abertura de sessão (Etapa 2)
@@ -507,6 +519,7 @@ Quando uma situação não coberta por este processo surgir, a decisão correta
 
 | Versão | Data | Tipo | Descrição |
 |---|---|---|---|
+| v1.4 | 2026-06-15 | Melhoria | Etapa 8 recebe instrução de ergonomia de fechamento (C5): entrega de Pacote 2 e Bloco 1 em code fence copiável ao encerrar, sem necessidade de seleção manual. Formaliza o arco de continuidade entre sessões. Declaração de token documentada (C6) |
 | v1.3 | 2026-06-14 | Correção | Campos de token dos Pacotes 1 e 2 alinhados à doutrina de dois tokens: ambos passam a pedir o **token de leitura** (abertura é read-only até a conversão para escrita; auditoria nunca recebe edição); o token de edição entra só no Modo 1. Remove a ambiguidade que levava o mantenedor a colar o token de edição na abertura |
 | v1.2 | 2026-06-12 | Melhoria | Etapa 2 reescrita: handoff lido **automaticamente** pelo agente a partir do último relatório `SESSAO-*` no hub-memoria (Bloco III do W03), eliminando a cola manual e o atrito diário de abertura. Adicionada regra de fallback: falha na extração do handoff → acionar auditoria W05 nova do zero, nunca reverter ao processo manual. Pacote 1 atualizado. Atende à meta 2 do bloco "Formalização do ciclo de sessão" do ROADMAP |
 | v1.1 | 2026-06-06 | Melhoria | Ajuste do critério de convergência da auditoria W05 (Etapa 7): encerramento com zero SEV1/SEV2 em acionamento único; SEV3/SEV4 toleradas via Handoff; teto de três iterações como salvaguarda. Correção interna de 2026-06-10 (SEV2-04 campo Versão da Seção 1; SEV4-03 "ordenadoras"→"orientadoras") |
