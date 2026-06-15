@@ -1,3 +1,20 @@
+
+## v1.4 — 2026-06-15
+
+**Tipo de alteração:** Melhoria
+**Autorizado por:** victorarimatea
+**Status do workflow:** ativo
+**Execuções afetadas:** todas as sessões de fechamento futuras
+**Skills afetadas:** S04 (consome W06)
+**Exposição de motivos:** Duas melhorias de ergonomia e clareza aprovadas na curadoria W04
+de 2026-06-15 (C5 e C6). C5 formaliza a entrega de blocos copiáveis no fechamento —
+eliminando seleção manual. C6 formaliza a declaração de token na Etapa 8.
+
+### Alterações realizadas
+- Etapa 8: instrução de ergonomia de fechamento adicionada (entrega de Pacote 2 + Bloco 1 em code fence)
+- Seção 9 (Histórico de versões): entrada v1.4 adicionada
+- Cabeçalho e Seção 1: versão atualizada de v1.3 → v1.4
+
 ## v1.3 — 2026-06-14
 
 **Tipo de alteração:** Correção (OP-W)
